@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# this pack is valid for apps with a config.ru in the root
+if [ -f $1/config.ru ]; then
+  echo "rack"
+  exit 0
+else
+  exit 1
+fi

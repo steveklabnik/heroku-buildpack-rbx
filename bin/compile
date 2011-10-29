@@ -1,0 +1,15 @@
+#!/bin/sh
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Found a rackup file"
+
+# if gemfile exists, bundle
+if [ -s $1/Gemfile ]; then
+  echo "Gemfile found, bundling" | indent
+  bundle
+  exit 1
+fi
+
